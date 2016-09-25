@@ -22,8 +22,7 @@ class Entry:
             name = input('Name: ')
             last_name = input('Last Name: ')
             phone_number = input('Phone Number: ')
-            entries_counter = 0
-
+            print('New entry has been successfully added!')
             return Entry(name, last_name, phone_number)
 
 
@@ -43,7 +42,6 @@ class Phonebook:
         self.vol_number = vol
 
     @staticmethod
-
     def browse(self):
         pass
         #petla do przegladaia wpisów
@@ -63,7 +61,6 @@ while True:
     # =============================================
     if chosen_menu_option == 1:
         Entry.new()
-        break
     elif chosen_menu_option == 2:
         # edit_entry()
         break
