@@ -51,7 +51,7 @@ class Phonebook:
 
 
 def show_menu():
-    print('Welcome to PhoneBook Application.\n\nEnter 1 to CREATE new Entries \nEnter 2 to EDIT existing Entries')
+    print('\nWhat do you want to do? \n\nEnter 1 to CREATE new Entries \nEnter 2 to EDIT existing Entries')
     print('Enter 3 to BROWSE Entries \nEnter 4 to exit PhoneBook ')
 
 # ***************** MAIN LOOP *****************
