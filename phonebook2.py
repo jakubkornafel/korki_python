@@ -1,5 +1,5 @@
 # ==================================================================
-# Proponuję zrobie klasy  reprezentującą pojedynczy wpis do tej książki, oraz klasę do reprezentowania całej książki (wykorzystywany będzie tylko jej jeden obiekt).
+# Proponuję zrobić klasę reprezentującą pojedynczy wpis do tej książki, oraz klasę do reprezentowania całej książki (wykorzystywany będzie tylko jej jeden obiekt).
 # ==================================================================
 #nawigacja ma byc przez podawanie numeru akcji
 # np. jak uzytkownik wpisze 1, to bedziemy przegladac wpisy
@@ -8,22 +8,37 @@
 
 class Entry:
 
-    def __init__(self, name, last_name, phone_nr):
+    def __init__(self, id_num, name, last_name, phone_nr):
+        self.id_num = id_num
         self.name = name
         self.last_name = last_name
         self.phone_nr = phone_nr
 
                         # ****************** NEW ENTRY FUNCTION *******************
-    @staticmethod
+    # @staticmethod
     def new():
         while True:
             entries_counter = 0
-            print('In order to create new Phone Book record, please enter some data.')
+            print('In order to create new Phone Book record, please enter required data.')
+            id_num = input('ID Number: ')
             name = input('Name: ')
             last_name = input('Last Name: ')
             phone_number = input('Phone Number: ')
             print('New entry has been successfully added!')
-            return Entry(name, last_name, phone_number)
+            return Entry(id_num, name, last_name, phone_number)
+            print(name, last_name)
+
+    # @staticmethod
+    def edit_entry(self):
+        while True:
+            print('In order to Edit a PhoneBook record, please enter required data.')
+            entered_id = input('Please, enter ID of an entry you want to change.')
+            if entered_id:
+                name = input('Name: ')
+                last_name = input('Last Name: ')
+                phone_number = input('Phone Number: ')
+                print('Data has been successfully changed!')
+                return Entry(name, last_name, phone_number)
 
 
 
@@ -54,6 +69,8 @@ def show_menu():
     print('\nWhat do you want to do? \n\nEnter 1 to CREATE new Entries \nEnter 2 to EDIT existing Entries')
     print('Enter 3 to BROWSE Entries \nEnter 4 to exit PhoneBook ')
 
+
+
 # ***************** MAIN LOOP *****************
 while True:
     show_menu()
@@ -62,12 +79,12 @@ while True:
     if chosen_menu_option == 1:
         Entry.new()
     elif chosen_menu_option == 2:
-        # edit_entry()
-        break
+        Entry.edit_entry()
+
     elif chosen_menu_option == 3:
         print('\nHere you\'ll see "browse()" function')
-        # browse()
-        break
+        #TODO creat browse() method
+
 
     elif chosen_menu_option == 4:
         print('\nThe PhoneBook has ended. Thanks and see you next time!')
