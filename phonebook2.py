@@ -15,18 +15,17 @@ class Entry:
         self.phone_nr = phone_nr
 
                         # ****************** NEW ENTRY FUNCTION *******************
-    # @staticmethod
+    @staticmethod
     def new():
         while True:
-            entries_counter = 0
             print('In order to create new Phone Book record, please enter required data.')
             id_num = input('ID Number: ')
             name = input('Name: ')
             last_name = input('Last Name: ')
             phone_number = input('Phone Number: ')
             print('New entry has been successfully added!')
+            print('New entry data is Name: {}, Last Name: {}, Phone Number: {}'.format(name, last_name, phone_number))
             return Entry(id_num, name, last_name, phone_number)
-            print(name, last_name)
 
     # @staticmethod
     def edit_entry(self):
@@ -45,11 +44,6 @@ class Entry:
                                         #************ EDIT LOOP **********
     # def edit(self):
         #petla do edytowania wpisu
-
-
-
-    # do tworzenia nowego obiektu Entry
-    # return Entry(tutaj dane)
 
 
 class Phonebook:
@@ -89,12 +83,3 @@ while True:
     elif chosen_menu_option == 4:
         print('\nThe PhoneBook has ended. Thanks and see you next time!')
         break
-
-
-
-#
-# Phonebook_1 = Phonebook(1)
-# record1 = Entry('Zosia', 'Kornafel', 789789798)
-#
-# print('Volume number: ', Phonebook_1.vol_number)
-# print(record1.name, record1.last_name, record1.phone_nr)
